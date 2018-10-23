@@ -1,0 +1,297 @@
+
+\documentclass[paper=a4,fontsize=11pt]{scrartcl} % KOMA-article class
+							
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{amsmath,amsfonts,amsthm}     % Math packages
+\usepackage{graphicx}                    % Enable pdflatex
+\usepackage[svgnames]{xcolor}            % Colors by their 'svgnames'
+\usepackage{geometry}
+	\textheight=700px                    % Saving trees ;-)
+\usepackage{url}
+\usepackage{hyperref}
+
+\frenchspacing              % Better looking spacings after periods
+\pagestyle{empty}           % No pagenumbers/headers/footers
+
+%%% Custom sectioning (sectsty package)
+%%% ------------------------------------------------------------
+\usepackage{sectsty}
+
+%\sectionfont{%			            % Change font of \section command
+%	\usefont{OT1}{phv}{b}{n}%		% bch-b-n: CharterBT-Bold font
+%	\sectionrule{0pt}{0pt}{-5pt}{3pt}}
+
+%%% Macros
+%%% ------------------------------------------------------------
+\newlength{\spacebox}
+\settowidth{\spacebox}{8888888888}			% Box to align text
+\newcommand{\sepspace}{\vspace*{1em}}		% Vertical space macro
+
+\newcommand{\MyName}[1]{ % Name
+		\Huge \usefont{OT1}{phv}{b}{n} \hfill #1
+		\par \normalsize \normalfont}
+		
+\newcommand{\MySlogan}[1]{ % Slogan (optional)
+		\large \usefont{OT1}{phv}{m}{n}\hfill \textit{#1}
+		\par \normalsize \normalfont}
+
+%\newcommand{\NewPart}[1]{\section*{\uppercase{#1}}}
+
+\newcommand{\PersonalEntry}[2]{
+		\noindent\hangindent=2em\hangafter=0 % Indentation
+		\parbox{\spacebox}{        % Box to align text
+		\textit{#1}}		       % Entry name (birth, address, etc.)
+		\hspace{1.5em} #2 \par}    % Entry value
+
+\newcommand{\SkillsEntry}[2]{      % Same as \PersonalEntry
+		\noindent\hangindent=2em\hangafter=0 % Indentation
+		\parbox{\spacebox}{        % Box to align text
+		\textit{#1}}			   % Entry name (birth, address, etc.)
+		\hspace{1.5em} #2 \par}    % Entry value	
+		
+\newcommand{\EducationEntry}[4]{
+		\noindent \textbf{#1} \hfill      % Study
+		\colorbox{Black}{%
+			\parbox{6em}{%
+			\hfill\color{White}#2}} \par  % Duration
+		\noindent \textit{#3} \par        % School
+		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+		\normalsize \par}
+
+\newcommand{\WorkEntry}[4]{				  % Same as \EducationEntry
+		\noindent \textbf{#1} \hfill      % Jobname
+		\colorbox{Black}{\color{White}#2} \par  % Duration
+		\noindent \textit{#3} \par              % Company
+		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+		\normalsize \par}
+		
+\newcommand{\ProjectEntry}[4]{				  % Same as \EducationEntry
+		\noindent \textbf{#1} \hfill      % Jobname
+		\colorbox{Black}{\color{White}#2} \par  % Duration
+		\noindent \textit{#3} \par              % Company
+		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+		\normalsize \par}
+		
+\newcommand{\ReferenceEntry}[2]{      % Same as \PersonalEntry
+		\noindent\hangindent=4em\hangafter=0 % Indentation
+		\parbox{\spacebox}{        % Box to align text
+		\textit{#1}}			   % Entry name (birth, address, etc.)
+		\hspace{1.5em} #2 \par}    % Entry value	
+
+%%% Begin Document
+%%% ------------------------------------------------------------
+\begin{document}
+% you can upload a photo and include it here...
+%\begin{wrapfigure}{l}{0.5\textwidth}
+%	\vspace*{-2em}
+%		\includegraphics[width=0.15\textwidth]{photo}
+%\end{wrapfigure}
+
+\textit{Curriculum Vitae:}
+\MyName{Jared Galloway}
+\MySlogan{Scientific Programmer | Evolutionary Biologist}
+\sepspace
+
+\sepspace
+
+%%% Personal details
+%%% ------------------------------------------------------------
+\section*{Personal details}{}
+
+\PersonalEntry{Birth}{January 13, 1995}
+\PersonalEntry{Address}{690 West 11th Eugene, OR}
+\PersonalEntry{Phone}{(406) 579-6768}
+\PersonalEntry{Mail}{\url{jgallowa@cs.uoregon.edu}}
+\PersonalEntry{Website}{\href{https://www.jaredgalloway.org}{www.jaredgalloway.org}}
+\PersonalEntry{Github}{\href{https://github.com/jgallowa07}{jgallowa07}}
+
+%%% Education
+%%% ------------------------------------------------------------
+\section*{Education}{}
+
+\EducationEntry{BSc. Computer and Information Science, Honors}{2014-2018}{University of Oregon}
+{3.99 Major GPA, 4.0 Basis. Graduated with departmental honors upon completion of an undergraduate thesis:
+\textit{Speeding up the Tortoise}
+A Case Study in Optimizing Forward-Moving Evolutionary Simulations
+ (see Honors). In conjunction with my computational background, my interests in biological mechanisms
+ led me to explore population genetics through the use of simulation and theory. (see Projects | Papers)}
+\sepspace
+
+\EducationEntry{Minor in Product Design}{2014-2018}{University of Oregon}
+{My background in user-product interaction fuels my interest in building tools (primarily software)
+that provide a natural feeling solution to the obstacle at hand. I consider design to be a progressively
+impactful aspect of software engineering as more of the scientific community 
+becomes reliant on technological solutions to diverse problems. 
+}
+\sepspace
+
+\EducationEntry{Honors Diploma}{2009-2013}{Bozeman High School}
+{completed 300+ hours of community service through Montana Conservation Corps.
+Advanced Placement courses in Biology, Psychology, and Micro Economics.
+}
+\sepspace
+
+%%% Work experience
+%%% ------------------------------------------------------------
+\section*{Work experience}{}
+
+\EducationEntry{Scientific Programmer}{2018-present}{Institute of Ecology and Evolution, University of Oregon, Full-time}
+{To further investigate my interests in computational biology, I have been working full time in both the Ralph Lab, and the Kern Lab 
+making pipelines to train neural networks with simulated genomic data. I use my background in data structures and algorithms 
+to create efficient methods of storing, processing, and feeding large data sets into deep learning models. 
+
+(see Projects | Papers)}
+\sepspace
+
+\EducationEntry{Research Assistant}{2017-2018}{Mathematics department, University of Oregon, Full-time}
+{As an introduction to population genetics and simulations, I worked in the Ralph Lab and the Cresko Lab exploring 
+the dynamics of rapid and parallel local adaptation of stickleback fish populations in Alaska. Using large,
+forward moving simulations I was tasked with producing and analyzing
+large data sets through the use of plotting and summary statistics. 
+(see Projects | Papers)}
+\sepspace
+
+\EducationEntry{Discrete Math Grader}{2015-2017}{University of Oregon, Part-time}
+{Graded assignments for two series of discrete mathematics class. The material was 
+centered around an introduction to proofs, combinatorics, and graph theory.
+}
+
+%%% Skills
+%%% ------------------------------------------------------------
+\section*{Skills}{}
+
+\SkillsEntry{Preferred Workflow}{Unix CLI, Git, Vim, \LaTeX, Slack}
+\sepspace
+
+\SkillsEntry{Programming Languages}{Python (fluent)}
+\SkillsEntry{}{C/C++ (proficient)}
+\SkillsEntry{}{Bash (proficient)}
+\SkillsEntry{}{Makefiles (proficient) - I like cmake}
+\SkillsEntry{}{Java (proficient)}
+\SkillsEntry{}{R (proficient)}
+\SkillsEntry{}{Haskell (intermediate)}
+\SkillsEntry{}{Javascript (intermediate)}
+\sepspace
+
+\SkillsEntry{Mathematics}{Calculus I/II/III}
+\SkillsEntry{}{Linear Algebra I/II}
+\SkillsEntry{}{Discrete Math}
+\SkillsEntry{}{Graph Theory}
+\SkillsEntry{}{Statistics}
+\sepspace
+
+\SkillsEntry{Evolutionary Simulators}{SLiM, msprime}
+\sepspace
+
+\SkillsEntry{Deep Learning Packages}{Keras, Tensor Flow, numpy, matplotlib}
+\sepspace
+
+%%% Skills
+%%% ------------------------------------------------------------
+\section*{Relevant Projects | Papers}{}
+\ProjectEntry{Population genetic parameter inference, deep learning}{2018-present}{In progress}
+{I am currently working to infer population genetic parameters (starting with $\rho$, for now) given the
+genotype matrix of a set of samples from a simulated population.  As of now, vanilla architectures
+such as an LSTM are competitive to industry standards such as \textbf{LD Hat} when trained and tested 
+on basic coalescent simulations. While impressive, we are not only interested in what deep learning \textit{can} do, 
+but also what limitations exist in terms of dealing with more complex demographic data. Moving forward,
+I'm personally interested in the representations and augmentations of data that allow neural nets to perform.
+
+}
+\sepspace
+\ProjectEntry{Undergraduate Thesis, \textit{Speeding up the tortoise}}{2017-2018}{Accepted by department}
+{For my undergraduate thesis, I implemented the first stages of genealogical tree sequence recording (\textit{TreeSeq}) for 
+a forward moving evolutionary simulator, \textbf{SLiM} $3.0$.
+Using C/C++, our lab integrated the data structures and algorithms used in the backend of \textbf{msprime} for the 
+\textit{treeSequence} object with the core code of SLiM. By giving simulations the ability to avoid tracking neutral mutations,
+\textit{TreeSeq} resulted in one-to-two orders of magnitude speedup in certain simulations. 
+In the thesis, I describe; the concepts behind genealogical tree sequence recording, the algorithms 
+and data structured needed to implement it in a forward moving simulation, and optimizations made 
+to improve it. The paper does not describe testing and compilation methods used to bring the software together.
+
+}
+\href{https://www.cs.uoregon.edu/Reports/UG-201806-Galloway.pdf}{link: UO Report Portal}
+\sepspace
+
+\ProjectEntry{Tree Sequence Recording Applications}{2017-2018}{Under Review | Molecular Ecology Resources}
+{Here, we describe the applications of genealogical tree sequence recording (\textit{TreeSeq}).
+This includes the types of simulations which could benefit from the ability to avoid tracking neutral mutations.
+Many examples in the paper also describe how to read in the tree sequence produced into python and use the
+\textbf{msprime} API to extract a multitude of information from the object. 
+
+}
+\href{https://doi.org/10.1101/407783}{link: bioArxiv}
+\sepspace
+
+\ProjectEntry{The Sweet Spot for Local Polygenic Adaptation}{2017-2018}{Final stages of editing}
+{Threespine stickleback fish provide a striking example of local adaptation in the context of recurrent gene flow. 
+This Northern hemisphere-wide metapopulation includes both marine populations and a large number of smaller freshwater populations that have repeatedly adapted to freshwater conditions, often by using standing genetic variation. 
+Here we use genealogical simulations to determine the levels of gene flow can best match the observed patterns of allele sharing among habitats in stickleback, 
+and to provide a framework for better understanding of the dynamics of gene flow and local adaptation for the maintenance and reuse of standing genetic variation.
+
+}
+\href{https://github.com/jgallowa07/SticklebackPaper/blob/master/Stickleback_Paper.pdf}{link: manuscript}
+\sepspace
+
+\ProjectEntry{Squirrel Suiter}{2016}{Google Play app store}
+{Squirrel Suiter is an ``endless flyer'' game where you play as a jetpack-equipped flying squirrel,
+ avoiding obstacles and munching acorns to gain the highest score. }
+\href{https://play.google.com/store/apps/details?id=com.Nighthawks.SquirrelSuiter}{link: Google Play}
+\sepspace
+
+\ProjectEntry{Image manipulator}{2016}{github}
+{This is an object oriented, source-sink, approach to image augmentation written purely in C++ with only the vector library.
+It takes in pnm images, applies a desired set of filters to it, and returns the augmented image. 
+}
+\href{https://jaredgalloway.org/Image-Manipulator}{link: description and examples}
+\sepspace
+
+
+%%% References
+%%% ------------------------------------------------------------
+\section*{References}
+
+\subsubsection*{| Dr. Peter L. Ralph} 
+\begin{center}
+Principal Investigator, (University of Oregon) 
+plr@uoregon.edu
+\end{center}
+
+\subsubsection*{| Dr. William R. Cresko}  
+\begin{center}
+Research Collaborator, (University of Oregon).
+wcresko@uoregon.edu
+\end{center}
+
+\subsubsection*{| Dr. Andrew D. Kern}
+\begin{center}
+Principal Investigator (University of Oregon),
+adkern@uoregon.edu
+\end{center}
+
+\subsubsection*{| Dr. Benjamin C Haller} 
+\begin{center}
+Research Collaborator (Cornell University),
+bhaller@mac.com
+\end{center}
+
+\subsubsection*{| Eric Merchant} 
+\begin{center}
+Instructor and Employer (University of Oregon), 
+ericm@uoregon.edu
+\end{center}
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
