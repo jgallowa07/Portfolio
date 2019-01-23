@@ -1,0 +1,160 @@
+
+\documentclass[paper=a4,fontsize=10pt]{scrartcl} % KOMA-article class
+			
+%\usepackage{blindtext}
+\usepackage{enumitem}
+%\usepackage{xcolor}			
+							
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{amsmath,amsfonts,amsthm}     % Math packages
+\usepackage{graphicx}                    % Enable pdflatex
+\usepackage[svgnames]{xcolor}            % Colors by their 'svgnames'
+\usepackage[margin=0.7in]{geometry}
+	\textheight=750px                    % Saving trees ;-)
+\usepackage{url}
+
+\frenchspacing              % Better looking spacings after periods
+\pagestyle{empty}           % No pagenumbers/headers/footers
+
+%%% Custom sectioning (sectsty package)
+%%% ------------------------------------------------------------
+\usepackage{sectsty}
+
+%\sectionfont{%			            % Change font of \section command
+%	\usefont{OT1}{phv}{b}{n}%		% bch-b-n: CharterBT-Bold font
+%	\sectionrule{0pt}{0pt}{-5pt}{3pt}}
+
+%%% Macros
+%%% ------------------------------------------------------------
+\newlength{\spacebox}
+\settowidth{\spacebox}{8888888888}			% Box to align text
+\newcommand{\sepspace}{\vspace*{1em}}		% Vertical space macro
+
+\newcommand{\MyName}[1]{ % Name
+		\Huge \usefont{OT1}{phv}{b}{n} \hfill #1
+		\par \normalsize \normalfont}
+		
+\newcommand{\MySlogan}[1]{ % Slogan (optional)
+		\large \usefont{OT1}{phv}{m}{n}\hfill \textit{#1}
+		\par \normalsize \normalfont}
+
+%\newcommand{\NewPart}[1]{\section*{\uppercase{#1}}}
+
+\newcommand{\PersonalEntry}[2]{
+		\noindent\hangindent=2em\hangafter=0 % Indentation
+		\parbox{\spacebox}{        % Box to align text
+		\textit{#1}}		       % Entry name (birth, address, etc.)
+		\hspace{1.5em} #2 \par}    % Entry value
+
+\newcommand{\SkillsEntry}[2]{      % Same as \PersonalEntry
+		\noindent\hangindent=2em\hangafter=0 % Indentation
+		\parbox{\spacebox}{        % Box to align text
+		\textit{#1}}			   % Entry name (birth, address, etc.)
+		\hspace{1.5em} #2 \par}    % Entry value	
+		
+\newcommand{\EducationEntry}[4]{
+		\noindent \textbf{#1} \hfill      % Study
+		\colorbox{White}{%
+			\parbox{6em}{%
+		%\parbox{6em}\par
+			\hfill\color{Black}#2}} \par  % Duration
+		\noindent \textit{#3} \par        % School
+		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+		\normalsize \par}
+
+\newcommand{\WorkEntry}[4]{				  % Same as \EducationEntry
+		\noindent \textbf{#1} \hfill      % Jobname
+		\colorbox{Black}{\color{White}#2} \par  % Duration
+		\noindent \textit{#3} \par              % Company
+		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+		\normalsize \par}
+
+%%% Begin Document
+%%% ------------------------------------------------------------
+\begin{document}
+% you can upload a photo and include it here...
+%\begin{wrapfigure}{l}{0.5\textwidth}
+%	\vspace*{-2em}
+%		\includegraphics[width=0.15\textwidth]{photo}
+%\end{wrapfigure}
+
+\MyName{Michael A. Deming}
+\MySlogan{r\'esum\'e}
+
+\sepspace
+
+%%% Personal details
+%%% ------------------------------------------------------------
+\section*{Personal details}{}
+
+%\PersonalEntry{Birth}{January 1, 1980}
+\PersonalEntry{Address}{690 E 21st Eugene, OR 97402}
+\PersonalEntry{Phone}{(403) 819-5070}
+\PersonalEntry{Mail}{\url{michael.deming.or@gmail.com}}
+
+%%% Education
+%%% ------------------------------------------------------------
+\section*{Education}{}
+
+%\EducationEntry{Bachelor of Science in Business Administration, Finance}{2013-2017}{University of Oregon}
+\EducationEntry{BSc. in Business Administration, Concentration in Finance}{2013-2017}{University of Oregon}
+%  {Descriptive text goes here. In order to maintain a stylish look, try to fill this description with a few lines of text. Do the same for the other entries in the education section.}
+%\sepspace
+
+\EducationEntry{Minor in Economics}{2013-2017}{University of Oregon}
+%{Descriptive text goes here. In order to maintain a stylish look, try to fill this description with a few lines of text. Do the same for the other entries in the education section.}
+
+%%% Work experience
+%%% ------------------------------------------------------------
+\section*{Work experience}{}
+
+\EducationEntry{Treasury Analyst}{2017-present}{Hawes Financial Group, Full-time, Springfield, OR}
+{
+%Adjusting \verb+\leftmargin+ via \verb+enumitem+ options:
+\begin{itemize}[leftmargin=+.2in]
+\item Accurately process 2,000 collection statements and client invoices monthly to ensure sure that clients were paid and billed on time.
+\item Analyze corporate bank accounts to interpret cash flow trends and estimate future cash movement.
+\item Successfully maintained positive client relations during rollout of new comprehensive collections software.
+\item Project lead, in partnership with tech support team, on development of new functionality for billing software in Coimbatore, India.
+\item Work closely with CFO to minimize operating costs and maximize bottom line revenue and workplace efficiency.
+\item Create and implemented training plan for a full time employee while accurately completing current duties.
+\item Effectively use Microsoft Office to create and analyze payment reports in order to guarantee accuracy and to increase customer satisfaction.
+\item Record interactive training videos to document the accounting processes required to process the transactions correctly.
+\item Led team trainings in electronic payment processing to increase workplace efficiency.
+\item Develop and implement new system improvements to streamline our processes while increasing accuracy to build client trust and improve satisfaction.
+\end{itemize}
+}
+
+\sepspace
+
+\EducationEntry{Bank Teller}{2015-2017}{Wells Fargo, part-time,  Eugene, OR}
+{
+\begin{itemize}[leftmargin=+.2in]
+\item Managed transactions with high attention to detail to ensure that all transactions were processed correctly.
+\item Assessed needs of customers by building rapport to enrich customer experience.
+\item Communicated effectively with customers by speaking English or Spanish to accommodate their language needs.
+\item Consistently stayed informed on banking regulations with regards to anti-money laundering policies, the BSA and other compliance related banking regulations.
+\item Recalled previous transactions in order to enhance customer experience as well as increase productivity.
+\end{itemize}
+}
+
+%%% Skills
+%%% ------------------------------------------------------------
+\section*{Transferable Skills}{}
+
+\SkillsEntry{Languages}{Spanish  (\textit{fluent})}
+
+\SkillsEntry{Software}{\textsc{Microsoft Office}, \textsc{Windows}}
+
+\begin{itemize}[leftmargin=+.1in]
+\item Detailed understanding of financial statements and intermediate accounting skills including Accounts Payable, Accounts Receivable and operating accounts.
+\item Exposure and experience with financial risk analysis along with in depth analysis of financial statements on both a historical and a pro forma basis.
+\end{itemize}
+
+%%% References
+%%% ------------------------------------------------------------
+%\NewPart{References}{}
+%Available upon request
+\end{document}

@@ -10,7 +10,7 @@
 \usepackage{geometry}
 	\textheight=700px                    % Saving trees ;-)
 \usepackage{url}
-\usepackage{hyperref}
+\usepackage[hidelinks]{hyperref}
 
 \frenchspacing              % Better looking spacings after periods
 \pagestyle{empty}           % No pagenumbers/headers/footers
@@ -51,11 +51,28 @@
 		\textit{#1}}			   % Entry name (birth, address, etc.)
 		\hspace{1.5em} #2 \par}    % Entry value	
 		
+%\newcommand{\EducationEntry}[4]{
+%		\noindent \textbf{#1} \hfill      % Study
+%		\colorbox{Black}{%
+%			\parbox{6em}{%
+%			\hfill\color{White}#2}} \par  % Duration
+%		\noindent \textit{#3} \par        % School
+%		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+%		\normalsize \par}
+%
+%\newcommand{\WorkEntry}[4]{				  % Same as \EducationEntry
+%		\noindent \textbf{#1} \hfill      % Jobname
+%		\colorbox{Black}{\color{White}#2} \par  % Duration
+%		\noindent \textit{#3} \par              % Company
+%		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+%		\normalsize \par}
+	
 \newcommand{\EducationEntry}[4]{
 		\noindent \textbf{#1} \hfill      % Study
-		\colorbox{Black}{%
+		\colorbox{White}{%
 			\parbox{6em}{%
-			\hfill\color{White}#2}} \par  % Duration
+		%\parbox{6em}\par
+			\hfill\color{Black}#2}} \par  % Duration
 		\noindent \textit{#3} \par        % School
 		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
 		\normalsize \par}
@@ -89,8 +106,8 @@
 %		\includegraphics[width=0.15\textwidth]{photo}
 %\end{wrapfigure}
 
-\textit{Curriculum Vitae:}
-\MyName{Jared Galloway}
+\textit{Curriculum Vitae}
+\MyName{Jared G. Galloway}
 \MySlogan{Scientific Programmer | Evolutionary Biologist}
 \sepspace
 
@@ -98,9 +115,8 @@
 
 %%% Personal details
 %%% ------------------------------------------------------------
-\section*{Personal details}{}
-
-\PersonalEntry{Birth}{January 13, 1995}
+\section*{Personal details}{
+}
 \PersonalEntry{Address}{690 West 11th Eugene, OR}
 \PersonalEntry{Phone}{(406) 579-6768}
 \PersonalEntry{Mail}{\url{jgallowa@cs.uoregon.edu}}
@@ -112,17 +128,17 @@
 \section*{Education}{}
 
 \EducationEntry{BSc. Computer and Information Science, Honors}{2014-2018}{University of Oregon}
-{3.99 Major GPA, 4.0 Basis. Graduated with departmental honors upon completion of an undergraduate thesis:
+{3.9 Major GPA. Graduated with departmental honors upon completion of an undergraduate thesis:
 \textit{Speeding up the Tortoise}
-A Case Study in Optimizing Forward-Moving Evolutionary Simulations
- (see Honors). In conjunction with my computational background, my interests in biological mechanisms
- led me to explore population genetics through the use of simulation and theory. (see Projects | Papers)}
+A Case Study in Optimizing Forward-Moving Evolutionary Simulations (see Research Projects).
+My interest in biological mechanisms led me to work with Peter Ralph studying population
+genetics through the use of large, forward moving simulations.}
 \sepspace
 
 \EducationEntry{Minor in Product Design}{2014-2018}{University of Oregon}
 {My background in user-product interaction fuels my interest in building tools (primarily software)
-that provide a natural feeling solution to the obstacle at hand. I consider design to be a progressively
-impactful aspect of software engineering as more of the scientific community 
+that provide a natural feeling solution to the obstacle at hand. I consider design to be a increasingly
+important aspect of software engineering as more of the scientific community 
 becomes reliant on technological solutions to diverse problems. 
 }
 \sepspace
@@ -138,19 +154,18 @@ Advanced Placement courses in Biology, Psychology, and Micro Economics.
 \section*{Work experience}{}
 
 \EducationEntry{Scientific Programmer}{2018-present}{Institute of Ecology and Evolution, University of Oregon, Full-time}
-{To further investigate my interests in computational biology, I have been working full time in both the Ralph Lab, and the Kern Lab 
+{To further investigate my interests in computational biology, I have been working full time with Andy Kern and Peter Ralph
 making pipelines to train neural networks with simulated genomic data. I use my background in data structures and algorithms 
-to create efficient methods of storing, processing, and feeding large data sets into deep learning models. 
-
-(see Projects | Papers)}
-\sepspace
+to create efficient methods of storing, processing, and feeding large data sets into deep learning models.
+(see Research Projects)}
+\newpage
 
 \EducationEntry{Research Assistant}{2017-2018}{Mathematics department, University of Oregon, Full-time}
-{As an introduction to population genetics and simulations, I worked in the Ralph Lab and the Cresko Lab exploring 
+{As an introduction to population genetics and simulations, I worked with Peter Ralph and William Cresko exploring 
 the dynamics of rapid and parallel local adaptation of stickleback fish populations in Alaska. Using large,
-forward moving simulations I was tasked with producing and analyzing
+forward population genetic simulations, I was tasked with producing and analyzing
 large data sets through the use of plotting and summary statistics. 
-(see Projects | Papers)}
+(see Research Projects)}
 \sepspace
 
 \EducationEntry{Discrete Math Grader}{2015-2017}{University of Oregon, Part-time}
@@ -185,67 +200,76 @@ centered around an introduction to proofs, combinatorics, and graph theory.
 \SkillsEntry{Evolutionary Simulators}{SLiM, msprime}
 \sepspace
 
-\SkillsEntry{Deep Learning Packages}{Keras, Tensor Flow, numpy, matplotlib}
+\SkillsEntry{Deep Learning Packages}{Keras, Tensor Flow, numpy}
 \sepspace
 
 %%% Skills
 %%% ------------------------------------------------------------
-\section*{Relevant Projects | Papers}{}
-\ProjectEntry{Population genetic parameter inference, deep learning}{2018-present}{In progress}
-{I am currently working to infer population genetic parameters (starting with $\rho$, for now) given the
-genotype matrix of a set of samples from a simulated population.  As of now, vanilla architectures
+\section*{Research Projects}{}
+\EducationEntry{Deep leaning to infer population genetic parameters}{2018-present}{In progress}
+{I am currently working with Drs.\ Andy Kern and Peter Ralph, using deep learning to infer population genetic parameters 
+(starting with recombination rates, for now) given the
+genotype matrix of a set of samples from a simulated population.  Currently, vanilla architectures
 such as an LSTM are competitive to industry standards such as \textbf{LD Hat} when trained and tested 
 on basic coalescent simulations. While impressive, we are not only interested in what deep learning \textit{can} do, 
-but also what limitations exist in terms of dealing with more complex demographic data. Moving forward,
-I'm personally interested in the representations and augmentations of data that allow neural nets to perform.
-
+but also what limitations exist in terms of dealing with more complex demographic data.
+For this project, my role is building the pipelines which efficiently generate the data for neural networks to train on.
+This involves writing, testing and profiling code that can be repurposed
+ as well as exploring data structures and algorithms best suited for the hardware available. 
 }
 \sepspace
-\ProjectEntry{Undergraduate Thesis, \textit{Speeding up the tortoise}}{2017-2018}{Accepted by department}
+
+\EducationEntry{Tree-sequence recording in SLiM opens new horizons for forward-time simulation of whole genomes}{2017-2018}{Accepted | Molecular Ecology Resources}
+{In this project I worked with Drs.\ Peter Ralph, Ben Haller, Jerome Kelleher, and Philipp Messer to 
+implement and describe the applications of genealogical tree sequence recording (\textit{TreeSeq}) in \textbf{SLiM 3.0}.
+This includes the types of simulations which could benefit from the ability to avoid tracking neutral mutations.
+Many examples in the paper also describe how to read in the tree sequence produced into python and use the
+\textbf{msprime} API to extract a multitude of information from the object. On this project, I was involved in  
+Conceptualization, Methodology, Software, Writing, Review \& Editing. 
+}
+\url{https://onlinelibrary.wiley.com/doi/abs/10.1111/1755-0998.12968?af=R}
+\sepspace
+
+
+\EducationEntry{Undergraduate Thesis, \textit{Speeding up the tortoise}}{2017-2018}{Accepted by department}
 {For my undergraduate thesis, I implemented the first stages of genealogical tree sequence recording (\textit{TreeSeq}) for 
 a forward moving evolutionary simulator, \textbf{SLiM} $3.0$.
 Using C/C++, our lab integrated the data structures and algorithms used in the backend of \textbf{msprime} for the 
 \textit{treeSequence} object with the core code of SLiM. By giving simulations the ability to avoid tracking neutral mutations,
 \textit{TreeSeq} resulted in one-to-two orders of magnitude speedup in certain simulations. 
-In the thesis, I describe; the concepts behind genealogical tree sequence recording, the algorithms 
+In the thesis, I describe the concepts behind genealogical tree sequence recording, the algorithms 
 and data structured needed to implement it in a forward moving simulation, and optimizations made 
 to improve it. The paper does not describe testing and compilation methods used to bring the software together.
-
+My advisors for this thesis were Boyana Norris and Peter Ralph
 }
-\href{https://www.cs.uoregon.edu/Reports/UG-201806-Galloway.pdf}{link: UO Report Portal}
+\url{https://www.cs.uoregon.edu/Reports/UG-201806-Galloway.pdf}
 \sepspace
 
-\ProjectEntry{Tree Sequence Recording Applications}{2017-2018}{Under Review | Molecular Ecology Resources}
-{Here, we describe the applications of genealogical tree sequence recording (\textit{TreeSeq}).
-This includes the types of simulations which could benefit from the ability to avoid tracking neutral mutations.
-Many examples in the paper also describe how to read in the tree sequence produced into python and use the
-\textbf{msprime} API to extract a multitude of information from the object. 
 
-}
-\href{https://doi.org/10.1101/407783}{link: bioArxiv}
-\sepspace
-
-\ProjectEntry{The Sweet Spot for Local Polygenic Adaptation}{2017-2018}{Final stages of editing}
-{Threespine stickleback fish provide a striking example of local adaptation in the context of recurrent gene flow. 
+\EducationEntry{A few stickleback suffice to transport adaptive alleles to new lakes}{2017-2018}{Final stages of editing for submission to Genetics}
+{In this project, I am working with Drs.\ William Cresko and Peter Ralph to explore rapid adaptation of Alaskan Stickleback populations 
+through the use of large, forward moving population genetics simulations. 
+Threespine Stickleback fish provide a striking example of local adaptation in the context of recurrent gene flow. 
 This Northern hemisphere-wide metapopulation includes both marine populations and a large number of smaller freshwater populations that have repeatedly adapted to freshwater conditions, often by using standing genetic variation. 
-Here we use genealogical simulations to determine the levels of gene flow can best match the observed patterns of allele sharing among habitats in stickleback, 
+Here we determine the levels of gene flow can best match the observed patterns of allele sharing among habitats in stickleback, 
 and to provide a framework for better understanding of the dynamics of gene flow and local adaptation for the maintenance and reuse of standing genetic variation.
-
 }
-\href{https://github.com/jgallowa07/SticklebackPaper/blob/master/Stickleback_Paper.pdf}{link: manuscript}
+\url{https://github.com/jgallowa07/SticklebackPaper/blob/master/Stickleback_Paper.pdf}
 \sepspace
 
-\ProjectEntry{Squirrel Suiter}{2016}{Google Play app store}
+\EducationEntry{Squirrel Suiter}{2016}{Google Play app store}
 {Squirrel Suiter is an ``endless flyer'' game where you play as a jetpack-equipped flying squirrel,
- avoiding obstacles and munching acorns to gain the highest score. }
-\href{https://play.google.com/store/apps/details?id=com.Nighthawks.SquirrelSuiter}{link: Google Play}
+ avoiding obstacles and munching acorns to gain the highest score. My contributions to this project include
+ Project Manager, Physics, Linear Algebra,  and Level Design  }
+\url{https://play.google.com/store/apps/details?id=com.Nighthawks.SquirrelSuiter}
 \sepspace
+\newpage
 
-\ProjectEntry{Image manipulator}{2016}{github}
+\EducationEntry{Image manipulator}{2016}{github}
 {This is an object oriented, source-sink, approach to image augmentation written purely in C++ with only the vector library.
 It takes in pnm images, applies a desired set of filters to it, and returns the augmented image. 
 }
-\href{https://jaredgalloway.org/Image-Manipulator}{link: description and examples}
+\url{https://jaredgalloway.org/Image-Manipulator}
 \sepspace
 
 
@@ -255,7 +279,7 @@ It takes in pnm images, applies a desired set of filters to it, and returns the 
 
 \subsubsection*{| Dr. Peter L. Ralph} 
 \begin{center}
-Principal Investigator, (University of Oregon) 
+Research Advisor (University of Oregon) 
 plr@uoregon.edu
 \end{center}
 
@@ -267,7 +291,7 @@ wcresko@uoregon.edu
 
 \subsubsection*{| Dr. Andrew D. Kern}
 \begin{center}
-Principal Investigator (University of Oregon),
+Research Advisor (University of Oregon),
 adkern@uoregon.edu
 \end{center}
 
